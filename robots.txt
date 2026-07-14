@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://next-nf.github.io/sitemap.xml

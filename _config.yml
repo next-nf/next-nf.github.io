@@ -1,0 +1,13 @@
+title: next-nf
+description: >-
+  Open-source 3GPP mobile-core network functions — SMF/PGW, HSS/UDR/UDM,
+  PCF/PCRF, CHF/OCS/OFCS — built in Erlang/OTP.
+url: https://next-nf.github.io
+author: Nathan Foster
+lang: en_US
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+# After creating the Search Console URL-prefix property, paste the token here
+# (jekyll-seo-tag emits the verification <meta> tag). Leave empty until then.
+google_site_verification: ""
