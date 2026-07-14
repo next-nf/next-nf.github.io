@@ -10,4 +10,4 @@ plugins:
   - jekyll-sitemap
 # After creating the Search Console URL-prefix property, paste the token here
 # (jekyll-seo-tag emits the verification <meta> tag). Leave empty until then.
-google_site_verification: ""
+google_site_verification: "w4Hp1g9x8iuYBH3nB6dCHThrgUgQZ0Su6O-rM-oJEOk"
