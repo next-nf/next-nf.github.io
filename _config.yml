@@ -8,6 +8,10 @@ lang: en_US
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
-# After creating the Search Console URL-prefix property, paste the token here
-# (jekyll-seo-tag emits the verification <meta> tag). Leave empty until then.
+# Google Search Console verification (jekyll-seo-tag emits the <meta> tag).
 google_site_verification: "w4Hp1g9x8iuYBH3nB6dCHThrgUgQZ0Su6O-rM-oJEOk"
+
+# Repo-only files that must NOT be published to the built site.
+# (Jekyll still keeps its own defaults — Gemfile/Gemfile.lock — excluded too.)
+exclude:
+  - CLAUDE.md
