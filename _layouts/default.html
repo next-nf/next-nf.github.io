@@ -5,16 +5,142 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {% seo %}
   <style>
-    :root { color-scheme: light dark; }
-    body { max-width: 46rem; margin: 2.5rem auto; padding: 0 1.25rem;
-           font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
-    h1 { line-height: 1.15; }
-    table { border-collapse: collapse; width: 100%; margin: 1.5rem 0; }
-    th, td { text-align: left; padding: .5rem .6rem;
-             border-bottom: 1px solid #8884; vertical-align: top; }
-    code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .9em; }
-    a { color: inherit; }
-    footer { margin-top: 2.5rem; font-style: italic; opacity: .8; }
+    :root {
+      color-scheme: light dark;
+      --bg: #ffffff;
+      --fg: #1a1f2b;
+      --muted: #5b6472;
+      --accent: #2563eb;
+      --border: #e3e8ef;
+      --surface: #f6f8fb;
+      --surface-2: #eef2f8;
+      --shadow: 0 1px 2px rgba(16,24,40,.04), 0 10px 28px rgba(16,24,40,.06);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0d1117;
+        --fg: #e6edf3;
+        --muted: #9aa7b5;
+        --accent: #6ea8ff;
+        --border: #232b36;
+        --surface: #161b22;
+        --surface-2: #1b222c;
+        --shadow: 0 1px 2px rgba(0,0,0,.3), 0 10px 28px rgba(0,0,0,.4);
+      }
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      max-width: 48rem;
+      margin: 0 auto;
+      padding: 3.5rem 1.25rem 4rem;
+      color: var(--fg);
+      background: var(--bg);
+      font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    /* Thin accent bar pinned to the top of the viewport. */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0 0 auto 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), #60a5fa 55%, transparent);
+      z-index: 10;
+    }
+
+    p { margin: 0 0 1rem; }
+
+    /* Hero */
+    h1 {
+      font-size: clamp(2.4rem, 6vw, 3.4rem);
+      line-height: 1.05;
+      letter-spacing: -0.025em;
+      font-weight: 800;
+      margin: 0 0 1rem;
+    }
+    h1 + p {
+      font-size: 1.2rem;
+      line-height: 1.5;
+      color: var(--muted);
+      margin-bottom: 1.25rem;
+    }
+    h1 + p strong { color: var(--fg); font-weight: 700; }
+
+    /* Section labels */
+    h2 {
+      margin: 2.75rem 0 1rem;
+      font-size: .82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      color: var(--accent);
+      padding-bottom: .55rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* Component table */
+    table {
+      border-collapse: separate;
+      border-spacing: 0;
+      width: 100%;
+      margin: 1.5rem 0;
+      font-size: .95rem;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    thead th {
+      background: var(--surface-2);
+      color: var(--muted);
+      font-size: .72rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-weight: 700;
+    }
+    th, td {
+      text-align: left;
+      padding: .7rem .85rem;
+      vertical-align: top;
+      border-bottom: 1px solid var(--border);
+    }
+    tbody tr:last-child td { border-bottom: none; }
+    tbody tr:nth-child(even) td { background: var(--surface); }
+    tbody tr:hover td { background: var(--surface-2); }
+    tbody td:first-child { font-weight: 600; white-space: nowrap; }
+    tbody td:first-child strong { color: var(--accent); }
+
+    @media (max-width: 34rem) {
+      table { display: block; overflow-x: auto; border-radius: 10px; }
+    }
+
+    /* Inline code / toolbox chips */
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: .85em;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: .12rem .42rem;
+      color: var(--fg);
+      white-space: nowrap;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; text-underline-offset: 2px; }
+
+    footer {
+      margin-top: 3rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border);
+      font-size: .9rem;
+      font-style: italic;
+      color: var(--muted);
+    }
   </style>
 </head>
 <body>
